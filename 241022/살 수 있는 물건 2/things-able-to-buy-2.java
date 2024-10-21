@@ -8,7 +8,9 @@ public class Main {
             System.out.println("mask");
         } else if (a >= 3000) {
             System.out.println("book");
-        } else { 
+        } else if(a>= 500 & a < 1000){ 
+            System.out.println("pen");
+        } else {
             System.out.println("no");
         }
 
