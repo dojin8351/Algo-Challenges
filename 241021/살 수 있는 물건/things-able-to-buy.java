@@ -6,7 +6,7 @@ public class Main {
         int a = sc.nextInt();
         if(a >= 1000 & a < 3000){
             System.out.println("mask");
-        } else if (a <= 3000) {
+        } else if (a >= 3000) {
             System.out.println("book");
         } else { 
             System.out.println("no");
