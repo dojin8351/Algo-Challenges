@@ -7,6 +7,7 @@ public class Main {
 
         if(a < 5){
             System.out.println("tiny");
+            System.out.printf("%d",a*a);
         } else {
             System.out.printf("%d",a*a);
         }
