@@ -8,7 +8,7 @@ public class Main {
         
         int sum = a + b;
         int minus = a - b;
-        double result = sum%minus;
+        double result = (double)sum/minus;
 
         System.out.printf("%.2f",result);
     }
