@@ -6,8 +6,9 @@ public class Main {
         int a = sc.nextInt();
 
         if(a < 5){
-            System.out.println("tiny");
             System.out.printf("%d",a*a);
+            System.out.println("tiny");
+            
         } else {
             System.out.printf("%d",a*a);
         }
