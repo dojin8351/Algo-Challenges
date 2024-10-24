@@ -14,19 +14,19 @@ public class Main {
     }
 
     public static String checkDay(int Y, int M, int D) {
-
+        String result = "";
         if(M == 1 || M == 3 || M == 5 || M == 7 || M == 8 || M == 10 || M == 12){
             if(D > 31){
-                return "-1";
+                result = "-1";
             } else {
                 if(M == 3 || M == 5){
-                    return "Spring";
-                } else if(M == 8) {
-                    return "Summer";
+                    result = "Spring";
+                } else if(M == 7 || M == 8) {
+                    result = "Summer";
                 } else if(M == 10){
-                    return "Fall";
+                    result = "Fall";
                 } else {
-                    return "Winter";
+                    result = "Winter";
                 }
             }
         } else if(M == 2){
@@ -34,36 +34,36 @@ public class Main {
                 if(Y % 4 == 0){
                     if(Y % 100 == 0){
                         if(Y % 400 == 0){
-                            return "Winter";
+                            result = "Winter";
                         } else{
-                            return "-1";
+                            result = "-1";
                         }
                     }else {
-                        return "Winter";
+                        result = "Winter";
                     }
                 }else {
-                    return "-1";
+                    result = "-1";
                 }
             } else if(D <= 28) {
-                return "Winter";
+                result = "Winter";
             } else {
-                return "-1";
+                result = "-1";
             }
         } else {
             if(D > 30){
-                return "-1";
+                result = "-1";
             } else {
                 if(M == 4){
-                    return "Spring";
+                    result = "Spring";
                 } else if(M == 6) {
-                    return "Summer";
+                    result = "Summer";
                 } else if(M == 9 || M == 11) {
-                    return "Fall";
+                    result = "Fall";
                 }
             }
         }
 
-        return null;
+        return result;
     }
 
 
