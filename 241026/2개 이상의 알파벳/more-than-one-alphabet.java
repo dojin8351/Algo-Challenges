@@ -24,16 +24,16 @@ public class Main {
 
         for(int i = 0; i < alpList.length; i++) {
             for(int j = 0; j < alpList.length; j++) {
-                if(alpList[i].equals(alpList[j])) {
+                if(!alpList[i].equals(alpList[j])) {
                     cnt++;
                 }
             }
         }
 
-        if(cnt >= 2){
-            result = "Yes";
-        } else {
+        if(cnt == 0) {
             result = "No";
+        } else {
+            result = "Yes";
         }
 
         return result;
