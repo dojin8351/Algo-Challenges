@@ -10,8 +10,7 @@ public class Main {
         int n = sc.nextInt();
         String[] arr = new String[n];
         for(int i = 0; i < n; i++){
-            String text = sc.next();
-            arr[i] = text;
+            arr[i] = sc.next();
         }
         Arrays.sort(arr);
         for(int i = 0; i < arr.length; i++){
