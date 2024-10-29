@@ -28,6 +28,6 @@ class Result {
 
     @Override
     public String toString() {
-        return "code : " + code + "\ncolor : " + color + "\ntime : " + time;
+        return "code : " + code + "\ncolor : " + color + "\nsecond : " + time;
     }
 }
