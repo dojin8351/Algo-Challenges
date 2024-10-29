@@ -25,7 +25,6 @@ public class Main {
         }
 
         Collections.sort(arr);
-        System.out.println(arr);
         return arr.get(a-1);
     }
 }
