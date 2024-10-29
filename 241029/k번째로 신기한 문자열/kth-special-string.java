@@ -19,13 +19,13 @@ public class Main {
 
         for(int i = 0; i < n; i++){
             String word = sc.next();
-            if(word.contains(text)){
+            if(word.startsWith(text)){
                 arr.add(word);
             }
         }
 
         Collections.sort(arr);
-
+        System.out.println(arr);
         return arr.get(a-1);
     }
 }
