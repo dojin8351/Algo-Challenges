@@ -22,10 +22,15 @@ public class Main {
 
         int diffValue = diff(m2,d2) - diff(m1,d1);
 
-        int result = (diffValue - day_of_week_index) / day_of_weeks.length +1;
+        int count = 0;
+        for (int i = 0; i <= diffValue; i++) {
+            int currentDayIndex = (day_of_week_index + i) % 7;
+            if (currentDayIndex == day_of_week_index) {
+                count++;
+            }
+        }
 
-
-        System.out.println(result);
+        System.out.println(count);
     }
 
     public static int diff(int m, int d) {
