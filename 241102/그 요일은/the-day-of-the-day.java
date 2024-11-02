@@ -22,7 +22,7 @@ public class Main {
 
         int diffValue = diff(m2,d2) - diff(m1,d1);
 
-        int result = diffValue / day_of_weeks.length +1;
+        int result = (diffValue - day_of_week_index) / day_of_weeks.length +1;
 
 
         System.out.println(result);
