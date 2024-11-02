@@ -1,47 +1,32 @@
 import java.util.*;
-
+import java.lang.Math;
 public class Main {
-    static Scanner sc = new Scanner(System.in);
-
-    // 각 월의 일수 (2024년은 윤년이므로 2월은 29일)
-    public static int[] day_of_month = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    // 요일 배열
-    public static String[] day_of_weeks = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
-
     public static void main(String[] args) {
-        // 입력받을 날짜와 요일
+        // 여기에 코드를 작성해주세요.
+        Scanner sc = new Scanner(System.in);
         int m1 = sc.nextInt();
         int d1 = sc.nextInt();
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
-        String targetDay = sc.next();
-        
-        // 기준 요일의 인덱스 찾기
-        int targetDayIndex = Arrays.asList(day_of_weeks).indexOf(targetDay);
-
-        // 두 날짜 간의 일수 차이 계산
-        int totalDays = diff(m2, d2) - diff(m1, d1);
-        
-        // 특정 요일이 몇 번 등장하는지 계산
-        int count = 0;
-        for (int i = 0; i <= totalDays; i++) {  // totalDays 포함
-            int currentDayIndex = (targetDayIndex + i) % 7; // 현재 요일 인덱스 계산
-            if (currentDayIndex == targetDayIndex) {
-                count++; // 기준 요일과 같은 경우 카운트
-            }
+        String A = sc.next();
+        int[] month = new int[]{0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        String[] daw = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}; 
+        int r1 = 0, r2 = 0;
+        for(int i = 1; i<m1; i++){
+            r1 += month[i];
         }
-
-        // 결과 출력
-        System.out.println(count);
-    }
-
-    // 주어진 월과 일을 기준으로 그날까지의 총 일수를 계산
-    public static int diff(int m, int d) {
-        int diff = 0;
-        // 주어진 월 이전의 모든 일수를 더함
-        for (int i = 1; i < m; i++) {
-            diff += day_of_month[i];
+        for(int i = 1; i<m2; i++){
+            r2 += month[i];
         }
-        return diff + d; // 해당 월의 일수도 더함
+        r1 += d1;
+        r2 += d2;
+        int r3 = (r2-r1)%7+1;
+        int r = (r2-r1)/7;
+        if(r3>Arrays.asList(daw).indexOf(A)){
+            r= r+1;
+        }
+        System.out.print(r);
+
+        
     }
 }
