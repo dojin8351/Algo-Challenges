@@ -1,32 +1,44 @@
 import java.util.*;
-import java.lang.Math;
+
 public class Main {
+
+    static Scanner sc = new Scanner(System.in);
+
+    public static int[] day_of_month = {0,31,29,31,30,31,30,31,31,30,31,30,31};
+    public static String[] day_of_weeks = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
     public static void main(String[] args) {
-        // 여기에 코드를 작성해주세요.
-        Scanner sc = new Scanner(System.in);
+
         int m1 = sc.nextInt();
         int d1 = sc.nextInt();
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
-        String A = sc.next();
-        int[] month = new int[]{0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        String[] daw = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}; 
-        int r1 = 0, r2 = 0;
-        for(int i = 1; i<m1; i++){
-            r1 += month[i];
-        }
-        for(int i = 1; i<m2; i++){
-            r2 += month[i];
-        }
-        r1 += d1;
-        r2 += d2;
-        int r3 = (r2-r1)%7+1;
-        int r = (r2-r1)/7;
-        if(r3>Arrays.asList(daw).indexOf(A)){
-            r= r+1;
-        }
-        System.out.print(r);
+        String day_of_week = sc.next();
 
-        
+        int day_of_week_index = Arrays.asList(day_of_weeks).indexOf(day_of_week);
+
+        int totalDays = diff(m2, d2) - diff(m1, d1);
+
+        int count = 0;
+        int currentDay = day_of_week_index;
+
+        for (int date = 0; date <= totalDays; date++) {
+            if (currentDay == day_of_week_index) {
+                count++;
+            }
+            currentDay = (currentDay + 1) % 7;
+        }
+
+
+        System.out.println(count);
+    }
+
+    public static int diff(int m, int d) {
+        int diff = 0;
+        if(m > 1) {
+            for(int i = 1; i < m; i++){
+                diff += day_of_month[i];
+            }
+        }
+        return diff + d;
     }
 }
