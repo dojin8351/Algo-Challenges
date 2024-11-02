@@ -13,17 +13,13 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
         String day_of_week = sc.next();
-        int day_of_week_index = 0;
-        for(int i = 0; i < day_of_weeks.length; i++){
-            if(day_of_weeks[i].equals(day_of_week)){
-                day_of_week_index = i;
-            }
-        }
 
-        int diffValue = diff(m2,d2) - diff(m1,d1);
+        int day_of_week_index = Arrays.asList(day_of_weeks).indexOf(day_of_week);
+
+        int totalDays = diff(m2, d2) - diff(m1, d1);
 
         int count = 0;
-        for (int i = 0; i < diffValue; i++) {
+        for (int i = 0; i <= totalDays; i++) {
             int currentDayIndex = (day_of_week_index + i) % 7;
             if (currentDayIndex == day_of_week_index) {
                 count++;
