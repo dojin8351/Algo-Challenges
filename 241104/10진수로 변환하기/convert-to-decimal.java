@@ -7,7 +7,6 @@ public class Main {
         String number = sc.next();
         char[] ch = number.toCharArray();
 
-        System.out.println(Arrays.toString(ch));
         int binary = 0;
         for (int i = 0; i < ch.length; i++) {
             // '1' 또는 '0'을 숫자로 변환하여 사용
