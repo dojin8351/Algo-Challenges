@@ -7,23 +7,21 @@ public class Main {
         int N = sc.nextInt();
         int K = sc.nextInt();
 
-        int[] arr = new int[N];
-        int[] max = new int[K];
+        int[] arr = new int[K];
         Arrays.fill(arr, 0);
-        for(int i = 0; i < K; i++ ){
-            int cnt = 0;
 
+        for(int i = 0; i < N; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
 
             for(int j = a-1; j < b; j++){
-                cnt++;
+                arr[j]++;
             }
-            max[i] = cnt;
-
         }
+
         Arrays.sort(arr);
-        System.out.println(max[K-1]);
+        System.out.println(arr[arr.length-1]);
+
 
 
     }
