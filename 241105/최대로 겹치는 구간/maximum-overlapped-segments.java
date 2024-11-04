@@ -6,22 +6,20 @@ public class Main {
 
         int N = sc.nextInt();
 
-        int[] diff = new int[100];
+        int[] diff = new int[201];
 
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < N; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
 
-            diff[a - 1]++;
-            if (b <= N) {
-                diff[b]--;
-            }
+            diff[a + 100]++;
+            diff[b + 100]--;
         }
 
         int max = 0;
         int current = 0;
 
-        for(int i = 0; i < 100; i++) {
+        for(int i = 0; i < 201; i++) {
             current += diff[i];
             max = Math.max(max, current);
         }
