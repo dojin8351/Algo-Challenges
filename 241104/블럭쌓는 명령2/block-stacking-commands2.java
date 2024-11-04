@@ -7,19 +7,22 @@ public class Main {
         int N = sc.nextInt();
         int K = sc.nextInt();
 
-        int[] arr = new int[K];
+        int[] arr = new int[N];
         Arrays.fill(arr, 0);
+        System.out.println(Arrays.toString(arr));
 
-        for(int i = 0; i < N; i++) {
+        for(int i = 0; i < K; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
 
             for(int j = a-1; j < b; j++){
                 arr[j]++;
             }
+            System.out.println(Arrays.toString(arr));
         }
-
+        System.out.println(Arrays.toString(arr));
         Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
         System.out.println(arr[arr.length-1]);
 
 
